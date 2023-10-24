@@ -7,10 +7,11 @@ window.addEventListener("DOMContentLoaded", function () {
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / this.window.innerHeight, 0.1, 1000);
     // const camera = new THREE.PerspectiveCamera(fov,aspect,near?,1000);
 
-    //レンダラーも必要
-    //カメラで移したやつをこっちの画面で移すのに必要
+    //レンダラーも必要  カメラで移したやつをこっちの画面で移すのに必要 //WebGLに３Dオブジェクトを表示する要素
     const renderer = new THREE.WebGLRenderer();
-    //WebGLに３Dオブジェクトを表示する要素
+
+    //コントロールを作成
+    // const controls = new OrbitControls(camera, document.body);
 
     //アスペクト比の計算↓
     renderer.setSize(window.innerWidth, window.innerHeight)
@@ -24,9 +25,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
     camera.position.z = 5;
     /* アニメーション制御 */
-    //コールバック処理
     function animate() {
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animate);//コールバック処理
         cube.rotation.x += 0.001;
         cube.rotation.y += 0.005;
         renderer.render(scene, camera);
