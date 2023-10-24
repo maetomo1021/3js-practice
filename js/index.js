@@ -1,5 +1,4 @@
 // import * as THREE from 'THREE';
-window.addEventListener("DOMContentLoaded", function () {
 
     //シーンが必要
     const scene = new THREE.Scene();
@@ -41,4 +40,4 @@ window.addEventListener("DOMContentLoaded", function () {
     //ウィンドウの大きさを変更した時のサイズ変更を自動で行う
     this.window.addEventListener("resize", onWindowResize)
     animate();
-})        
+      
